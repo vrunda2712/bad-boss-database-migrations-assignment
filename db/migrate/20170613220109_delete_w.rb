@@ -1,6 +1,9 @@
-class PartyGuests < ActiveRecord::Migration[5.0]
-  def change
-    create_table :party_guests do |t|
+class DeleteW < ActiveRecord::Migration[5.0]
+  def up
+    drop_table :widgets
+  end
+  def down
+    create_table :widgets do |t|
       t.string :first_name
       t.string :last_name
       t.text :dietary_restrictions
@@ -10,7 +13,6 @@ class PartyGuests < ActiveRecord::Migration[5.0]
       t.text :illnesses
       t.text :medication
       t.string :voting_preferences
-    end
-  end
-
+     end
+   end
 end
